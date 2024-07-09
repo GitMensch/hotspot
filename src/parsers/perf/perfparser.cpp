@@ -1614,7 +1614,7 @@ void PerfParser::startParseFile(const QString& path)
 
         // note: file is always readable and in supported format here,
         //        already validated in initParserArgs()
-        QFile file(path);
+        QFile file(m_parserArgs[1]);
         file.open(QIODevice::ReadOnly);
         if (file.peek(11) == "QPERFSTREAM") {
             d.setInput(&file);
